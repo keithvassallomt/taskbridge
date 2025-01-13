@@ -223,7 +223,7 @@ Once that's done, run the following command to install the TaskBridge CLI. This 
 system.
 
 ```shell
-pipx install "git+https://github.com/pint-sized/taskbridge.git"
+pipx install "git+https://github.com/keithvassallomt/taskbridge.git"
 ```
 
 ### Using the CLI
