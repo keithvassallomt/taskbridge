@@ -303,7 +303,7 @@ class Reminder:
 
         ical_string = """BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Pint-Sized Software//TaskBridge//NONSGML v1.0//EN
+PRODID:-//keithvassallomt//TaskBridge//NONSGML v1.0//EN
 BEGIN:VTODO
 """
         if due_string is not None:

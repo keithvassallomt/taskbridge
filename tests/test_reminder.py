@@ -241,7 +241,7 @@ END:VCALENDAR
         assert success is True
         assert ical_string == """BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Pint-Sized Software//TaskBridge//NONSGML v1.0//EN
+PRODID:-//keithvassallomt//TaskBridge//NONSGML v1.0//EN
 BEGIN:VTODO
 DUE;VALUE=DATE-TIME:20240418T180000
 DTSTAMP:20240418T175000
