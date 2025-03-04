@@ -109,8 +109,13 @@ class Reminder:
 
         comp = caldav_task.icalendar_component
 
+        # Reading from remote, replace __TB__ to x-apple-reminder://
+        remote_uuid = comp['UID'].to_ical().decode() if 'UID' in comp else None
+        if not remote_uuid is None:
+            remote_uuid = remote_uuid.replace("__TB__", "x-apple-reminder://")
+
         return Reminder(
-            uuid=comp['UID'].to_ical().decode() if 'UID' in comp else None,
+            uuid=remote_uuid,
             name=comp['summary'].to_ical().decode(),
             created_date=comp['DTSTAMP'].dt if 'DTSTAMP' in comp else None,
             modified_date=comp['LAST-MODIFIED'].dt if 'LAST-MODIFIED' in comp else None,
@@ -312,7 +317,7 @@ UID:{id}
 """.format(modification_date=modification_date,
            summary=self.name,
            status='COMPLETED' if self.completed else 'NEEDS-ACTION',
-           id=self.uuid)
+           id=self.uuid.replace("x-apple-reminder://", "__TB__"))  # Since :// causes encoding issues
 
         if alarm_string is not None:
             ical_string += alarm_string + "\n"
