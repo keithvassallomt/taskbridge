@@ -27,8 +27,8 @@ darkdetect = "^0.8.0"
 keyring = "^25.3.0"
 schedule = "^1.2.1"
 caldav = "^1.4.0"
-markdown2 = "^2.5.1"
-markdownify = "^0.14.1"
+markdown2 = "^2.5.3"
+markdownify = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 py2app = "^0.28.7"
