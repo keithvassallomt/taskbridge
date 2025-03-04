@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 project = 'TaskBridgeApp'
 copyright = '2025, Keith Vassallo'
 author = 'Keith Vassallo'
-release = '0.1.3b3'
+release = '0.1.3b4'
 
 extensions = [
     'sphinx.ext.autodoc',
