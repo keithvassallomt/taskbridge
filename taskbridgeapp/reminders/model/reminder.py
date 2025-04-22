@@ -270,10 +270,15 @@ class Reminder:
 
         """
         tasks_in_caldav = container.remote_calendar.cal_obj.search(todo=True, uid=self.uuid)
+
+        # Remote task using __TB__
+        if len(tasks_in_caldav) == 0:
+            tasks_in_caldav = container.remote_calendar.cal_obj.search(todo=True, uid=self.uuid.replace("x-apple-reminder://", "__TB__"))
+
         if len(tasks_in_caldav) > 0:
             remote = tasks_in_caldav[0]
             self.uuid = new_uuid
-            remote.icalendar_component["uid"] = self.uuid
+            remote.icalendar_component["uid"] = self.uuid.replace("x-apple-reminder://", "__TB__")
             remote.save()
             return True, 'Remote reminder UID updated'
         return False, 'Could not find remote reminder to update UUID: {} ({})'.format(self.uuid, self.name)

@@ -568,7 +568,7 @@ class ReminderContainer:
                                     if r.uuid == deleted['local_uuid'] or r.name == deleted['local_name']), None)
             if remote_reminder is not None:
                 if helpers.confirm("Delete remote reminder {}".format(remote_reminder.name)):
-                    to_delete = container.remote_calendar.cal_obj.search(todo=True, uid=remote_reminder.uuid)
+                    to_delete = container.remote_calendar.cal_obj.search(todo=True, uid=remote_reminder.uuid.replace("x-apple-reminder://", "__TB__"))
                     if len(to_delete) > 0:
                         to_delete[0].delete()
                         container.remote_reminders.remove(remote_reminder)
