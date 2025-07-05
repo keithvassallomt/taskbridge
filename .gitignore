@@ -244,3 +244,6 @@ taskbridgeapp/cli/*.json
 
 # DMG Canvas
 tb_dmg_canvas.dmgcanvas/
+
+# XML Strip
+strip_lxml.sh
