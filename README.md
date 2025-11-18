@@ -1,3 +1,7 @@
+# There's something better!
+
+TaskBridge has been replaced by iCloudBridge, which can sync Notes, Reminders, Photos and passwords, and has an awesome easy-to-use web ui! Check it out [here](https://github.com/keithvassallomt/icloudbridge). 
+
 # TaskBridge
 
 Export your Apple Reminders & Notes to NextCloud, a local folder, or CalDav - and keep them in sync!
